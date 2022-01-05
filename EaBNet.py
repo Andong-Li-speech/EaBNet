@@ -181,8 +181,8 @@ class UNet_Encoder(nn.Module):
             nn.PReLU(c)))
         unet.append(nn.Sequential(
             GateConv2d(c, c_end, k1, (1,2)),
-            nn.InstanceNorm2d(64, affine=True),
-            nn.PReLU(64)))
+            nn.InstanceNorm2d(c_end, affine=True),
+            nn.PReLU(c_end)))
         self.unet_list = nn.ModuleList(unet)
 
     def forward(self, x: Tensor):

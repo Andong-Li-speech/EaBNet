@@ -18,8 +18,8 @@ class EaBNet(nn.Module):
                  is_causal: bool = True,
                  is_u2: bool = True,
                  bf_type: str = "lstm",
-                 topo_type: str = 'mimo',
-                 intra_connect: str = 'cat',
+                 topo_type: str = "mimo",
+                 intra_connect: str = "cat",
                  ):
         """
         :param k1: kernel size in the 2-D GLU, (2, 3) by default
@@ -438,9 +438,9 @@ class Skip_connect(nn.Module):
         self.connect = connect
 
     def forward(self, x_main, x_aux):
-        if self.connect == 'add':
+        if self.connect == "add":
             x = x_main + x_aux
-        elif self.connect == 'cat':
+        elif self.connect == "cat":
             x = torch.cat((x_main, x_aux), dim=1)
         return x
 

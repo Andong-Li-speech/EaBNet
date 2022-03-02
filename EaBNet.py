@@ -618,7 +618,7 @@ def numParams(net):
 
 class NormSwitch(nn.Module):
     """
-    Currently, only BN and IN are considered
+    Currently, BN, IN, and cLN are considered
     """
     def __init__(self,
                  norm_type: str,

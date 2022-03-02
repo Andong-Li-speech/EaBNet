@@ -630,7 +630,7 @@ class NormSwitch(nn.Module):
         self.dim_size = dim_size
         self.c = c
 
-        assert norm_type in ["BN", "IN"] and dim_size in ["1D", "2D"]
+        assert norm_type in ["BN", "IN", "cLN"] and dim_size in ["1D", "2D"]
         if norm_type == "BN":
             if dim_size == "1D":
                 self.norm = nn.BatchNorm1d(c)

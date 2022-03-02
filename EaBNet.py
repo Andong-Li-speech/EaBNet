@@ -785,7 +785,7 @@ if __name__ == '__main__':
     parser.add_argument("--bf_type", type=str, default="lstm", choices=["lstm", "cnn"])
     parser.add_argument("--topo_type", type=str, default="mimo", choices=["mimo", "miso"])
     parser.add_argument("--intra_connect", type=str, default="cat", choices=["cat", "add"])
-    parser.add_argument("--norm_type", type=str, default="IN", choices=["BN", "IN"])
+    parser.add_argument("--norm_type", type=str, default="IN", choices=["BN", "IN", "cLN"])
     args = parser.parse_args()
 
     net = EaBNet(k1=args.k1,

@@ -42,7 +42,7 @@ class EaBNet(nn.Module):
         :param norm_type: "IN" by default.
 
         Note: as IN will not accumulate mean and var statistics in both training and inference phase, it can not
-        guarantee strict causal. If you wanner use IN, an optional method is to calculate the accumulated statistics
+        guarantee strict causality. If you wanner use IN, an optional method is to calculate the accumulated statistics
         in both training and inference stages. Besides, you can also choose other norms like BN, LN, cLN.
         """
         super(EaBNet, self).__init__()

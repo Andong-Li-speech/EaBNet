@@ -556,8 +556,8 @@ class LSTM_BF(nn.Module):
         self.M = M
         self.hid_node = hid_node
         # Components
-        self.rnn1 = nn.LSTM(input_size=embed_dim, hidden_size=hid_node)
-        self.rnn2 = nn.LSTM(input_size=hid_node, hidden_size=hid_node)
+        self.rnn1 = nn.LSTM(input_size=embed_dim, hidden_size=hid_node, batch_first=True)
+        self.rnn2 = nn.LSTM(input_size=hid_node, hidden_size=hid_node, batch_first=True)
         self.w_dnn = nn.Sequential(
             nn.Linear(hid_node, hid_node),
             nn.ReLU(True),
